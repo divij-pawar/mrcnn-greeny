@@ -39,5 +39,5 @@ mrcnn:
    Google_Colab_notebook.ipynb
 ```
 # Run without downloading
-<a href="https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/Google_Colab_notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
+<a href="https://github.com/divij-pawar/mrcnn-greeny/blob/main/Google_Colab_notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
 
