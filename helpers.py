@@ -1,6 +1,11 @@
 #######################################################################
 import numpy as np
-#Apply mask to image
+#Apply mask to image frame. 
+# i.e paint green everything except people
+# image_c - Received image to be painted
+# mask - Received mask of (multiple) people
+# color - color choice for background
+# alpha - transparency variable: set to 1 for no transparency
 def apply_mask(image_c, mask, color, alpha=1):
     """Apply the given mask to the image.
     """
@@ -13,7 +18,10 @@ def apply_mask(image_c, mask, color, alpha=1):
     
 #######################################################################
 
-#Add two masks together
+#Add two masks together. Used to add together different 
+# instances of people together to stitch into one mask
+# current_mask - mask for the current instance of object (person)
+# mask - mask of all previous people combined
 def add_mask(current_mask, mask=None):
   if mask is None:
     print("Returned")
@@ -27,19 +35,27 @@ def add_mask(current_mask, mask=None):
   
 #######################################################################
 
-# This function is used to show the object detection result in original image.
+# This function is used to overlay the object detection result in original image.
+# image_c - image_c - Received image to be processed
+# boxes - the coordinates of boxes of each object detected
+# masks - the masks of each individual object (instances) detected
+# ids - the unique ids of each instances detected in image
+# names - all the classes which can be detected by model
+# scores - individual scores of each instances
 def display_instances(image_c, boxes, masks, ids, names, scores):
 
     # n_instances saves the amount of all objects
     n_instances = boxes.shape[0]
-
+    
+    #Error check if no instances 
     if not n_instances:
         print('NO INSTANCES TO DISPLAY')
     else:
         # Check if number of boxes,masks,ids is same
         assert boxes.shape[0] == masks.shape[-1] == ids.shape[0]
     mask = None
-
+    
+    # Iterate over all instances detected to find all people
     for i in range(n_instances):
         if not np.any(boxes[i]):
             continue
@@ -47,18 +63,17 @@ def display_instances(image_c, boxes, masks, ids, names, scores):
         # use label to select person object from all the 80 classes in COCO dataset
         label = names[ids[i]]
         if label == 'person':
-            # save the largest object in the image as main character
-            # other people will be regarded as background
+            # Select complete mask for current instance
             current_mask = masks[:, :, i]
-
+            # Add current mask to final mask
             mask = add_mask(current_mask, mask)
         else:
             continue
 
-        # apply mask for the image
-    # by mistake you put apply_mask inside for loop or you can write continue in if also
-
-    image_c = apply_mask(image_c, mask, (0.0,1.0,0.0))
+    # define BGR value of green for green bg 
+    green_color = (0.0,1.0,0.0)
+    # apply final mask for the image
+    image_c = apply_mask(image_c, mask, green_color)
     return image_c
     
     
