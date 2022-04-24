@@ -1,4 +1,11 @@
-#######################################################################
+"""
+MaskRCNN - Greeny
+helpers file
+
+Written by Divij Pawar 2022
+
+------------------------------------------------------------
+"""
 import numpy as np
 #Apply mask to image frame. 
 # i.e paint green everything except people
@@ -24,13 +31,11 @@ def apply_mask(image_c, mask, color, alpha=1):
 # mask - mask of all previous people combined
 def add_mask(current_mask, mask=None):
   if mask is None:
-    print("Returned")
     return current_mask
 
   assert current_mask.shape == mask.shape
   mask = np.logical_or(mask,current_mask)
 
-  print(mask.shape)
   return mask
   
 #######################################################################

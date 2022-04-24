@@ -1,3 +1,13 @@
+"""
+MaskRCNN - Greeny
+
+Run this file to start the application
+
+Written by Divij Pawar 2022
+
+------------------------------------------------------------
+"""
+
 import cv2
 import numpy as np
 import os
@@ -7,6 +17,7 @@ from mrcnn import utils
 from mrcnn import model as modellib
 from helpers import apply_mask, add_mask, display_instances
 
+# Check whether python version is compatible
 py_ver = sys.version_info[0:2]
 if  py_ver >= (3, 9) or py_ver < (3,5) :
     raise Exception('Requires python between 3.8 and 3.5')
@@ -19,7 +30,7 @@ if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
     
     
-# Change the config infermation
+# Change the config information
 class InferenceConfig(coco.CocoConfig):
     GPU_COUNT = 1
     
@@ -55,27 +66,36 @@ class_names = [
     'teddy bear', 'hair drier', 'toothbrush'
 ]
 
+# Request input video file name 
 video_name = input("Enter video filename: ")
 capture = cv2.VideoCapture(video_name)
+# Generate output video file name
 output_file = video_name[:-4]+"_output.mp4" 
 
 # Recording Video
-fps = np.floor(capture.get(cv2.CAP_PROP_FPS))
+# Set fps to input video fps
+fps = round(capture.get(cv2.CAP_PROP_FPS))
+# Set resolution to input video resolution
 width = int(capture.get(3))
 height = int(capture.get(4))
+# Set video encoding as mp4
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(output_file, fourcc, fps, (width, height))
 
-ct=1
+ct=1 # Count for number of frames passed
 while True:
     ret, frame = capture.read()
     if not ret:
         print(" Exiting ...")
         break
+        
+    # Pass frames through mrcnn model
     results = model.detect([frame], verbose=0)
     print("Done predicting frame number ",ct)
     ct+=1
+    
     r = results[0]
+    # Pass frame to be processed for masking
     frame = display_instances(
         frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
