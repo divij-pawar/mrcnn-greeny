@@ -12,7 +12,7 @@ import cv2
 import numpy as np
 import os
 import sys
-import coco
+from mrcnn import coco
 from mrcnn import utils
 from mrcnn import model as modellib
 from helpers import apply_mask, add_mask, display_instances
