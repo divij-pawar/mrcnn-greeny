@@ -58,25 +58,28 @@ class_names = [
 video_name = input("Enter video filename: ")
 capture = cv2.VideoCapture(video_name)
 output_file = video_name[:-4]+"_output.mp4" 
-# these 2 lines can be removed if you dont have a 1080p camera.
-# capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-# capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 
 # Recording Video
-fps = round(capture.get(cv2.CAP_PROP_FPS))
+fps = np.floor(capture.get(cv2.CAP_PROP_FPS))
 width = int(capture.get(3))
 height = int(capture.get(4))
-out = cv2.VideoWriter(output_file, cv2.VideoWriter_fourcc(*'MP4V'), fps, (width, height))
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+out = cv2.VideoWriter(output_file, fourcc, fps, (width, height))
 
+ct=1
 while True:
     ret, frame = capture.read()
+    if not ret:
+        print(" Exiting ...")
+        break
     results = model.detect([frame], verbose=0)
-    print("Done predicting")
+    print("Done predicting frame number ",ct)
+    ct+=1
     r = results[0]
     frame = display_instances(
         frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
-    cv2.imshow(frame)
+    #cv2_imshow(frame)
     # Recording Video
     out.write(frame)
 

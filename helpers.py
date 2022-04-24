@@ -1,5 +1,5 @@
 #######################################################################
-
+import numpy as np
 #Apply mask to image
 def apply_mask(image_c, mask, color, alpha=1):
     """Apply the given mask to the image.
