@@ -79,12 +79,9 @@ while True:
     frame = display_instances(
         frame, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
-    #cv2_imshow(frame)
+
     # Recording Video
     out.write(frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+out.release()
 capture.release()
-cv2.destroyAllWindows()
