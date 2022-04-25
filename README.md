@@ -53,7 +53,7 @@ mrcnn:
    run.py
    Google_Colab_notebook.ipynb
 ```
-# Run without downloading
+# Run online
 <a href="https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/Google_Colab_notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
 
 # Contributing
