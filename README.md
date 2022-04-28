@@ -1,6 +1,6 @@
 # MRCNN - greeny
 ## Introduction
-Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) the Tensorflow 2 version of [Mask R-CNN](https://github.com/matterport/Mask_RCNN) originally meant for object detection and scene segmentation, to add a green screen to the background of people in an mp4 video. It supports multiple people and creates an exact cut-out of the people present in the video.
+Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) the Tensorflow 2 version of [Mask R-CNN](https://github.com/matterport/Mask_RCNN) originally meant for object detection and scene segmentation, to add a green screen to the background of people in any video. It supports multiple people and creates an exact cut-out of the people present in the video.
 
 ## Here are the demo images:
 |**Original Image 1**|**New Image 1**|
@@ -21,7 +21,6 @@ Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfga
 1. This project requires python version to be 3.8 >= (python versions) >=3.5.
 2. This project requires a gpu for faster process times.
 3. This project will not work with tensorflow 1.
-4. It requires the input video to be mp4.
 
 
 # Installation steps
