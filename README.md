@@ -62,3 +62,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [Mask R-CNN](https://github.com/matterport/Mask_RCNN) <br>
 [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) <br>
 [Mask-RCNN Shiny](https://github.com/huuuuusy/Mask-RCNN-Shiny) 
+
+## License
+[APACHE LICENSE, VERSION 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
