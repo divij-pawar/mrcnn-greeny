@@ -53,7 +53,7 @@ mrcnn:
    Google_Colab_notebook.ipynb
 ```
 # Run online
-<a href="https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/Google_Colab_notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/examples/Google_Colab_notebook.ipynb) | [ MRCNN Greeny Google Colab Notebook](https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/examples/Google_Colab_notebook.ipynb)
 
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -62,6 +62,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [Mask R-CNN](https://github.com/matterport/Mask_RCNN) <br>
 [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) <br>
 [Mask-RCNN Shiny](https://github.com/huuuuusy/Mask-RCNN-Shiny) 
+
+# Citations
+
 
 ## License
 [APACHE LICENSE, VERSION 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
