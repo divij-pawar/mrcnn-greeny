@@ -17,12 +17,6 @@ Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfga
 |![](demo/1.gif)|![](demo/1_g.gif)|
 
 
-# Compatibility 
-1. This project requires python version to be 3.8 >= (python versions) >=3.5.
-2. This project requires a gpu for faster process times.
-3. This project will not work with tensorflow 1.
-
-
 # Installation steps
 Greeny doesn't require installation. 
 1. You can download dependencies as follows
