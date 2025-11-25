@@ -16,18 +16,12 @@ limitations under the License.
 """
 
 import cv2
-import numpy as np
 import os
 import sys
 from mrcnn import coco
 from mrcnn import utils
 from mrcnn import model as modellib
-from helpers import apply_mask, add_mask, display_instances
-
-# Check whether python version is compatible
-py_ver = sys.version_info[0:2]
-if  py_ver >= (3, 9) or py_ver < (3,5) :
-    raise Exception('Requires python between 3.8 and 3.5')
+from helpers import display_instances
 
 # Load the pre-trained model data
 ROOT_DIR = os.getcwd()
