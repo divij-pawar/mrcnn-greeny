@@ -1,6 +1,6 @@
 # MRCNN - greeny
 ## Introduction
-Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) the Tensorflow 2 version of [Mask R-CNN](https://github.com/matterport/Mask_RCNN) originally meant for object detection and scene segmentation, to add a green screen to the background of people in any video. It supports multiple people and creates an exact cut-out of the people present in the video.
+Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) the Tensorflow 2 version of [Mask R-CNN](https://github.com/matterport/Mask_RCNN) originally meant for object detection and scene segmentation, to add a green screen to the background of people in any video. It supports multiple people and creates a cut-out of the people present in the video.
 
 ## Here are the demo images:
 |**Original Image 1**|**New Image 1**|
@@ -11,7 +11,6 @@ Greeny is an application which uses [Mask R-CNN TF2](https://github.com/ahmedfga
 |![](demo/2.png)|![](demo/2_g.png)|
 
 ## Here are the demo gifs:
-
 |**Demo 1**|**Demo 1 Greened**|
 | :--: | :--: |
 |![](demo/1.gif)|![](demo/1_g.gif)|
@@ -44,10 +43,7 @@ mrcnn:
    helpers.py
    requirements.txt
    run.py
-   Google_Colab_notebook.ipynb
 ```
-# Run online
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/examples/Google_Colab_notebook.ipynb) | [ MRCNN Greeny Google Colab Notebook](https://colab.research.google.com/github/divij-pawar/mrcnn-greeny/blob/main/examples/Google_Colab_notebook.ipynb)
 
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -56,9 +52,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [Mask R-CNN](https://github.com/matterport/Mask_RCNN) <br>
 [Mask R-CNN TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) <br>
 [Mask-RCNN Shiny](https://github.com/huuuuusy/Mask-RCNN-Shiny) 
-
-# Citations
-
 
 ## License
 [APACHE LICENSE, VERSION 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
